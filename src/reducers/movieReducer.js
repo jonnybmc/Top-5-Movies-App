@@ -5,8 +5,7 @@ import {
     REQUEST_SORT_ORDER_OPTIONS_START,
     REQUEST_SORT_ORDER_OPTIONS_SUCCESS,
     REQUEST_SORT_ORDER_OPTIONS_FAILURE,
-    ORDER_BY_RELEASE_DATE,
-    ORDER_BY_RANK
+    SORT_MOVIES
 
 
 } from '../actionCreators/movieActions';
@@ -15,7 +14,8 @@ const initialState = {
     items : [],
     loading : false,
     error : null,
-    sortOrderItems: []
+    sortOrderItems: [],
+    currentSortOrder : "releaseDate"
 }
 
 export default (state = initialState, action) => {
@@ -58,15 +58,10 @@ export default (state = initialState, action) => {
                 error:action.payload.error,
                 sortOrderItems:[]
             }
-        case ORDER_BY_RELEASE_DATE:
+        case SORT_MOVIES: 
             return {
                 ...state,
-                sortOrder: 'release_date'
-            }
-        case ORDER_BY_RANK:
-            return {
-                ...state,
-                sortOrder: 'rank'
+                currentSortOrder : action.payload.sortValue
             }
         default:
             return state;

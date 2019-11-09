@@ -1,15 +1,19 @@
 import React from 'react';
-import FilterItem from '../filterItem';
+import { connect } from 'react-redux';
+import FilterGroup from './filterGroup-view';
 
-const FilterGroup = ({filters}) => {
-    return (
-        <div>
-            <h1>This is the Filter group</h1>
-            {filters.map(filter => (
-                <FilterItem label={filter.label}/>
-            ))}
-        </div>
-    )
-}
+
+
+
+const mapStateToProps = state => ({
+    movies: state.movies.items
+})
+
+
+
+
+
+
+
 
 export default FilterGroup;

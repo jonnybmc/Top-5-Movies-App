@@ -8,7 +8,7 @@ const FilterGroup = ({filters, sortMovies}) => {
         <div>
             <h1>This is the Filter group</h1>
             {filters.map(filter => (
-                <FilterItem label={filter.label} onClick={sortMovies}/>
+                <FilterItem label={filter.label} onClick={() => sortMovies(filter.valueToOrderBy)}/>
             ))}
         </div>
     )

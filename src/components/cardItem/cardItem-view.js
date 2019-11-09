@@ -1,8 +1,9 @@
 import React from 'react';
 
+
 const CardItem = ({image}) => {
     return  (
-        <div>
+        <div>   
             <img src={image}/>
         </div>
     )

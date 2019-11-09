@@ -7,6 +7,9 @@ import CardList from '../../components/cardList';
 
 import FilterGroup from '../../components/filterGroup';
 
+//actions
+import {sortMovies} from '../../actionCreators/movieActions';
+
 
 
 
@@ -16,18 +19,18 @@ class Home extends Component {
         this.sortMovies = this.sortMovies.bind(this);
     }
   
-    sortMovies() {
-        console.log('movies are now sorted');
+    sortMovies(sortVal) {
+       this.props.sortMovies(sortVal);
     }
     componentDidMount() {
-        this.props.dispatch(requestMovies());
-        this.props.dispatch(requestSortOrderOptions());
+        this.props.requestMovies();
+        this.props.requestSortOrderOptions();
        
     }
     render() {
-        console.log(this.props);
+        console.log('render has occured');
 
-        const { error, loading, movies, sortOrderItems } = this.props;
+        const { error, loading, movies, sortOrder,sortOrderItems } = this.props;
 
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -42,7 +45,7 @@ class Home extends Component {
                 
                 <section>
                      <FilterGroup filters={sortOrderItems} sortMovies={this.sortMovies}/>
-                    <CardList/>
+                    <CardList movies={movies} sortValue={sortOrder}/>
                     <h1>This is Home</h1>
                     <section>
                     {movies.map(movie => (
@@ -71,15 +74,26 @@ class Home extends Component {
 //     requestMovies: () => dispatch(requestMovies())
 // })
 
-
-
-
-
-const mapStateToProps = state => ({
-    movies: state.movies.items,
-    loading: state.movies.loading,
-    error: state.movies.error,
-    sortOrderItems: state.movies.sortOrderItems
+const mapDispatchToProps = dispatch => ({
+    requestMovies : () => dispatch(requestMovies()),
+    requestSortOrderOptions: () => dispatch(requestSortOrderOptions()),
+    sortMovies : (sortVal) => dispatch(sortMovies(sortVal))
 })
 
-export default connect(mapStateToProps)(Home);
+// const { currentSortOrder } = state.movies;
+// //     return {
+// //         filteredMovies: state.movies.items.sort((a,b) => (a[currentSortOrder] > b[currentSortOrder]) ? 1 : -1)
+        
+// //     }
+
+const mapStateToProps = state => {
+    return {
+        sortOrder:state.movies.currentSortOrder,
+        movies: state.movies.items,
+        loading: state.movies.loading,
+        error: state.movies.error,
+        sortOrderItems: state.movies.sortOrderItems
+    }  
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

@@ -1,1 +1,1 @@
-export {default} from './cardList-redux';
+export {default} from './cardList-view';

@@ -40,8 +40,10 @@ export const REQUEST_SORT_ORDER_OPTIONS_START = "REQUEST_SORT_ORDER_OPTIONS_STAR
 export const REQUEST_SORT_ORDER_OPTIONS_SUCCESS = "REQUEST_SORT_ORDER_OPTIONS_SUCCESS";
 export const REQUEST_SORT_ORDER_OPTIONS_FAILURE = "REQUEST_SORT_ORDER_OPTIONS_FAILURE";
 
-export const ORDER_BY_RELEASE_DATE = "ORDER_BY_RELEASE_DATE";
-export const ORDER_BY_RANK = "ORDER_BY_RANK";
+export const SORT_BY_RELEASE_DATE = "SORT_BY_RELEASE_DATE";
+export const SORT_BY_RANK = "SORT_BY_RANK";
+
+export const SORT_MOVIES = "SORT_MOVIES";
 
 
 
@@ -74,12 +76,17 @@ export const requestSortOrderOptionsFailure = (error) => ({
   payload: {error}
 })
 
-export const orderByReleaseDate = releaseDate => ({
-    type: ORDER_BY_RELEASE_DATE,
+export const sortByReleaseDate = releaseDate => ({
+    type: SORT_BY_RELEASE_DATE,
     payload: {releaseDate}
 })
 
-export const orderByRank = rank => ({
-  type:ORDER_BY_RANK,
+export const sortByRank = rank => ({
+  type:SORT_BY_RANK,
   payload: {rank}
 });
+
+export const sortMovies = sortValue => ({
+  type: SORT_MOVIES,
+  payload: {sortValue}
+})
