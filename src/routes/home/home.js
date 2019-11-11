@@ -44,7 +44,7 @@ class Home extends Component {
             return (
                 
                 <section>
-                     <FilterGroup filters={sortOrderItems} sortMovies={this.sortMovies}/>
+                     <FilterGroup filters={sortOrderItems} sortMovies={this.sortMovies} currentSortOrder={sortOrder}/>
                     <CardList movies={movies} sortValue={sortOrder}/>
                     <h1>This is Home</h1>
                     <section>
