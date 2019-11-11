@@ -1,11 +1,16 @@
 import React from 'react';
+import {Fragment} from 'react';
 
 
-const CardItem = ({image}) => {
+
+const CardItem = ({image,releaseDate,rank}) => {
     return  (
-        <div>   
-            <img src={image}/>
-        </div>
+        <Fragment>   
+            <img className="card" style={{width:"100%"}} src={image}/>
+            <div>
+            <span>{releaseDate }</span> <span>{rank}</span>
+            </div>  
+        </Fragment>
     )
 }
 

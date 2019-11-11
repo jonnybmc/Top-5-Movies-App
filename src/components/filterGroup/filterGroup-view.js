@@ -1,6 +1,8 @@
 import React from 'react';
 import FilterItem from '../filterItem';
 
+import {Link} from 'react-router-dom'
+
 
 
 const FilterGroup = ({filters, sortMovies, currentSortOrder}) => {
@@ -9,7 +11,9 @@ const FilterGroup = ({filters, sortMovies, currentSortOrder}) => {
         <div>
             <h1>This is the Filter group</h1>
             {filters.map(filter => (
-                <FilterItem isActive={currentSortOrder} label={filter.label}onClick={() => sortMovies(filter.valueToOrderBy)}/>
+                <Link to="/">
+                    <FilterItem isActive={currentSortOrder} label={filter.label}onClick={() => sortMovies(filter.valueToOrderBy)}/>
+                </Link>
             ))}
         </div>
     )

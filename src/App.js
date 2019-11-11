@@ -17,13 +17,13 @@ class App extends Component {
               <Link to="/"> Home </Link>
             </li>
             <li>
-              <Link to="/:id"> MovieDetail </Link>
+              <Link to="/movies/:id"> MovieDetail </Link>
             </li>
           </ul>
         </div>
 
         <Route exact path="/" component= {Home}></Route>
-        <Route exact path="/:id" component= {MovieDetail}></Route>
+        <Route exact path="/movies/:id" component= {MovieDetail}></Route>
       </Router>
     )
   }
