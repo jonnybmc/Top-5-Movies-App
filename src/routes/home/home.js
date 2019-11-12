@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { requestMovies} from "../../actionCreators/movieActions";
 import {requestSortOrderOptions, sortMovies } from "../../actionCreators/sortActions";
 
-import CardItem from '../../components/cardItem';
 import CardList from '../../components/cardList';
 
 import FilterGroup from '../../components/filterGroup';

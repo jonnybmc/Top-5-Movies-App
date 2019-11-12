@@ -9,6 +9,9 @@ export const SORT_BY_RANK = "SORT_BY_RANK";
 export const SORT_MOVIES = "SORT_MOVIES";
 
 
+
+
+
 export function requestSortOrderOptions() {
     return async dispatch => {
       dispatch(requestSortOrderOptionsStart())
@@ -27,10 +30,13 @@ export const requestSortOrderOptionsStart = () => ({
     type: REQUEST_SORT_ORDER_OPTIONS_START
   });
   
-  export const requestSortOrderOptionsSuccess = sortOrderOptions => ({
-    type: REQUEST_SORT_ORDER_OPTIONS_SUCCESS,
-    payload : {sortOrderOptions}
-  });
+  export const requestSortOrderOptionsSuccess = data => {
+    let filteredData = data.components.filter(function(el){return el.type === "order-select"});
+    return {
+      type: REQUEST_SORT_ORDER_OPTIONS_SUCCESS,
+      payload : filteredData[0].items
+    }
+  };
   
   export const requestSortOrderOptionsFailure = (error) => ({
     type: REQUEST_SORT_ORDER_OPTIONS_FAILURE,

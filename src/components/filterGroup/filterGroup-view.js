@@ -11,8 +11,8 @@ const FilterGroup = ({filters, sortMovies, currentSortOrder}) => {
     return (
         <section className={styles.filterContainer}>
             <h4>Sort By </h4>
-            {filters.map(filter => (
-                <Link to="/">
+            {filters.map((filter,i) => (
+                <Link key={i} to="/">
                     <FilterItem isActive={currentSortOrder} label={filter.label}onClick={() => sortMovies(filter.valueToOrderBy)}/>
                 </Link>
             ))}

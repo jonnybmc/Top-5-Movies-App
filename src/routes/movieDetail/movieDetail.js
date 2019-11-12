@@ -8,10 +8,6 @@ import CardItemDetail from '../../components/cardItemDetail';
 
 class MovieDetail extends Component {
 
-
-    constructor(props){
-        super(props);
-    }
     componentDidMount(){
         if (this.props.movies.length < 1) {
             this.props.requestMovies();

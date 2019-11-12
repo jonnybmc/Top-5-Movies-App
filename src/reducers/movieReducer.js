@@ -4,6 +4,9 @@ import {
     REQUEST_MOVIES_FAILURE,
 } from '../actionCreators/movieActions';
 
+
+
+
 const initialState = {
     items : [],
     loading : false,
@@ -22,7 +25,7 @@ export default (state = initialState, action) => {
                 return {
                     ...state,
                     loading:false,
-                    items:action.payload.movies.components[1].items
+                    items:action.payload
                 }
         case REQUEST_MOVIES_FAILURE:
             return {

@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 loading:false,
-                sortOrderItems: action.payload.sortOrderOptions.components[0].items
+                sortOrderItems: action.payload
             }
         case REQUEST_SORT_ORDER_OPTIONS_FAILURE:
             return {

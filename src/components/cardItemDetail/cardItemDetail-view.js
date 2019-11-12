@@ -3,7 +3,7 @@ import styles from './cardItemDetail.module.scss';
 import {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 
-const CardItemDetail = ({ movies, currentMovieId, history}) => {
+const CardItemDetail = ({ movies, currentMovieId}) => {
 
     const movie = movies.find(elem => {
         return elem.rank == currentMovieId
