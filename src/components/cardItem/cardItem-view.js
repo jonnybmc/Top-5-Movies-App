@@ -3,9 +3,6 @@ import {Fragment} from 'react';
 
 import styles from './cardItem.module.scss';
 
-
-
-
 const CardItem = ({image}) => {
     return  (
         <Fragment>   

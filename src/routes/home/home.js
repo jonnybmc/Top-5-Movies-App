@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestMovies, requestSortOrderOptions, sortMovies } from "../../actionCreators/movieActions";
+import { requestMovies} from "../../actionCreators/movieActions";
+import {requestSortOrderOptions, sortMovies } from "../../actionCreators/sortActions";
 
 import CardItem from '../../components/cardItem';
 import CardList from '../../components/cardList';
@@ -63,11 +64,11 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => {
     return {
-        sortOrder: state.movies.currentSortOrder,
+        sortOrder: state.sort.currentSortOrder,
         movies: state.movies.items,
         loading: state.movies.loading,
         error: state.movies.error,
-        sortOrderItems: state.movies.sortOrderItems
+        sortOrderItems: state.sort.sortOrderItems
     }
 }
 

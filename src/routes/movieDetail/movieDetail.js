@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import { requestMovies, requestSortOrderOptions, sortMovies } from "../../actionCreators/movieActions";
+import { requestMovies } from "../../actionCreators/movieActions";
+import {requestSortOrderOptions, sortMovies} from "../../actionCreators/sortActions";
 
 import CardItemDetail from '../../components/cardItemDetail';
 
@@ -15,7 +16,6 @@ class MovieDetail extends Component {
         if (this.props.movies.length < 1) {
             this.props.requestMovies();
         }
-
     }
 
     render() {
@@ -27,9 +27,7 @@ class MovieDetail extends Component {
                 </div>
             )
         }
-        return <div>Loading...</div>;
-
-        
+        return <div>Loading...</div>;  
     }
 }
 

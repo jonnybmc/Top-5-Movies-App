@@ -11,16 +11,6 @@ class App extends Component {
   render(){
     return (
       <Router>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/"> Home </Link>
-            </li>
-            <li>
-              <Link to="/movies/:id"> MovieDetail </Link>
-            </li>
-          </ul>
-        </nav> */}
         <Route exact path="/" component= {Home}></Route>
         <Route exact path="/movies/:id" component= {MovieDetail}></Route>
       </Router>
