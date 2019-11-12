@@ -2,6 +2,8 @@ import React from 'react';
 import CardItem from '../cardItem';
 import {Link} from 'react-router-dom';
 
+import styles from './cardList.module.scss';
+
 
 const CardList = ({movies,sortValue, location}) => {
     let sortedMovieList = movies.sort((a,b) => (a[sortValue] > b[sortValue]) ? 1 : -1);
@@ -11,9 +13,9 @@ const CardList = ({movies,sortValue, location}) => {
          </Link>
     ));
     return (
-        <div style={{display:"flex",flexWrap:"wrap",alignItems:"flex-start"}}>
+        <section className={styles.cardListContainer}>
            {sortedMovieList}
-        </div>
+        </section>
     )
         
 }

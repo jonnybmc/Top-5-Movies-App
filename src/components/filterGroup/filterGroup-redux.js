@@ -5,6 +5,8 @@ import FilterGroup from './filterGroup-view';
 
 
 
+
+
 const mapStateToProps = state => ({
     movies: state.movies.items
 })

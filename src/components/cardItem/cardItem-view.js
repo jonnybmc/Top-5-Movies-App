@@ -1,15 +1,15 @@
 import React from 'react';
 import {Fragment} from 'react';
 
+import styles from './cardItem.module.scss';
 
 
-const CardItem = ({image,releaseDate,rank}) => {
+
+
+const CardItem = ({image}) => {
     return  (
         <Fragment>   
-            <img className="card" style={{width:"100%"}} src={image}/>
-            <div>
-            <span>{releaseDate }</span> <span>{rank}</span>
-            </div>  
+            <img className={styles.card} src={image}/>
         </Fragment>
     )
 }

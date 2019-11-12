@@ -7,11 +7,6 @@ import CardList from '../../components/cardList';
 
 import FilterGroup from '../../components/filterGroup';
 
-
-
-
-
-
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -41,12 +36,12 @@ class Home extends Component {
         }
 
         return (
-
-            <section>
+            <main>
+   
                 <FilterGroup filters={sortOrderItems} sortMovies={this.sortMovies} currentSortOrder={sortOrder} />
                 <CardList movies={movies} sortValue={sortOrder} />
                 <section></section>
-            </section>
+            </main>
         )
 
 

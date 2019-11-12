@@ -1,22 +1,30 @@
 import React from 'react';
+import styles from './cardItemDetail.module.scss';
+import {Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
-const CardItemDetail = ({movies,currentMovieId}) => {
+const CardItemDetail = ({ movies, currentMovieId, history}) => {
+
     const movie = movies.find(elem => {
         return elem.rank == currentMovieId
     });
     return (
-        <article>
-            <section>
+        <Fragment>
+        <article className={styles.cardItemDetailContainer}>
+            <section className={styles.cardItemDetail__image}>
+                <img src={movie.imageUrl} />
+            </section>
+            <section className={styles.cardItemDetail__contents}>
                 <h1>{movie.title}</h1>
-            </section>
-            <section>
-                    <img src={movie.imageUrl}/>
-                    <h3>{movie.synopsis}</h3>
-                    <h4>{movie.releaseDate}</h4>
-            </section>
-            
+                <p>{movie.synopsis}</p>
+                <h4>Release Date: {movie.releaseDate}</h4>
+            </section> 
         </article>
-    
+         <hr style={{visibility:"hidden"}}/>
+        <Link to="/" style={{color:"#fff"}}>Back to Movies</Link> 
+         </Fragment>
+        
+
     )
 }
 

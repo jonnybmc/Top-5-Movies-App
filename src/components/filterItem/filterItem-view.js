@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './filterItem.module.scss';
 
 const format = (string) => {
     let [first,second] = string.split(" ");
@@ -10,11 +11,11 @@ const format = (string) => {
 const FilterItem = ({label,onClick,isActive}) => {
     let formattedLabel = format(label);
     let style = {
-        backgroundColor: formattedLabel === isActive ? "rgba(0,0,0,1)" : "rgba(0,0,0,0.2)",
-        color: formattedLabel === isActive ? "white" : "gray"
+        backgroundColor: formattedLabel ===  isActive ? "rgb(218, 218, 218)" : "rgba(117, 117, 117, 0.5)",
+        color: formattedLabel === isActive ? "black" : "darkgrey"
     };
     return (
-        <button style={style} onClick={onClick}>{label}</button>
+        <button className={styles.filterItem} style={style} onClick={onClick}>{label}</button>
     ) 
 }
 

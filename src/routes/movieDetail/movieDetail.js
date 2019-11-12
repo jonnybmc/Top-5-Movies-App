@@ -12,13 +12,15 @@ class MovieDetail extends Component {
         super(props);
     }
     componentDidMount(){
-        
+        if (this.props.movies.length < 1) {
+            this.props.requestMovies();
+        }
 
     }
 
     render() {
         let {movies} = this.props;
-        if (movies) {
+        if (movies.length > 0) {
             return (
                 <div> 
                    <CardItemDetail movies={movies} currentMovieId={this.props.match.params.id}/>

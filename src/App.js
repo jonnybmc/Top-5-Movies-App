@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 import Home from './routes/home';
 import MovieDetail from './routes/movieDetail';
@@ -11,7 +11,7 @@ class App extends Component {
   render(){
     return (
       <Router>
-        <div>
+        {/* <nav>
           <ul>
             <li>
               <Link to="/"> Home </Link>
@@ -20,8 +20,7 @@ class App extends Component {
               <Link to="/movies/:id"> MovieDetail </Link>
             </li>
           </ul>
-        </div>
-
+        </nav> */}
         <Route exact path="/" component= {Home}></Route>
         <Route exact path="/movies/:id" component= {MovieDetail}></Route>
       </Router>
