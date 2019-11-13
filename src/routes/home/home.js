@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { requestMovies} from "../../actionCreators/movieActions";
-import {requestSortOrderOptions, sortMovies } from "../../actionCreators/sortActions";
+import { requestMovies } from "../../actions/movieActions";
+import { requestSortOrderOptions, sortMovies } from "../../actions/sortActions";
 
 import CardList from '../../components/cardList';
 
@@ -37,7 +37,7 @@ class Home extends Component {
 
         return (
             <main>
-   
+
                 <FilterGroup filters={sortOrderItems} sortMovies={this.sortMovies} currentSortOrder={sortOrder} />
                 <CardList movies={movies} sortValue={sortOrder} />
                 <section></section>

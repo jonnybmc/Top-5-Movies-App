@@ -19,7 +19,7 @@ export function requestMovies() {
     catch (error) {
       dispatch(requestMoviesFailure(error));
     }
-    return ;
+    return;
   }
 }
 
@@ -29,12 +29,12 @@ export const requestMoviesStart = () => ({
 });
 
 export const requestMoviesSuccess = data => {
-  let filteredData = data.components.filter(function(el){return el.type === "movie-list"});
+  let filteredData = data.components.filter(function (el) { return el.type === "movie-list" });
   return {
     type: REQUEST_MOVIES_SUCCESS,
-    payload:filteredData[0].items
+    payload: filteredData[0].items
   }
-  
+
 };
 
 export const requestMoviesFailure = error => ({

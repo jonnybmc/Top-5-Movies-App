@@ -2,9 +2,10 @@ import {createStore, applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/rootReducer';
 
-import { composeWithDevTools } from 'redux-devtools-extension';
 
-const initialState = {}
+const initialState = {};
+
+//add logic to subscribe to state updates  that persist to local storage
 
 export default function storeInit(state = initialState) {
     return createStore(
