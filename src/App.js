@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <Router>
         <Route exact path="/" component= {Home}></Route>
-        <Route exact path="/movies/:id" component= {MovieDetail}></Route>
+        <Route exact path="/movies/:rank" component= {MovieDetail}></Route>
       </Router>
     )
   }

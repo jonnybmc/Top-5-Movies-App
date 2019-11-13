@@ -3,10 +3,10 @@ import styles from './cardItemDetail.module.scss';
 import {Fragment} from 'react';
 import {Link} from 'react-router-dom';
 
-const CardItemDetail = ({ movies, currentMovieId}) => {
+const CardItemDetail = ({ movies, currentMovieRank}) => {
 
     const movie = movies.find(elem => {
-        return elem.rank == currentMovieId
+        return elem.rank == currentMovieRank
     });
     return (
         <Fragment>

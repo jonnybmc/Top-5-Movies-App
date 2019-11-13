@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
-import { requestMovies } from "../../actionCreators/movieActions";
-import {requestSortOrderOptions, sortMovies} from "../../actionCreators/sortActions";
+import { requestMovies } from "../../actions/movieActions";
+import {requestSortOrderOptions, sortMovies} from "../../actions/sortActions";
 
 import CardItemDetail from '../../components/cardItemDetail';
 
@@ -19,7 +19,7 @@ class MovieDetail extends Component {
         if (movies.length > 0) {
             return (
                 <div> 
-                   <CardItemDetail movies={movies} currentMovieId={this.props.match.params.id}/>
+                   <CardItemDetail movies={movies} currentMovieRank={this.props.match.params.rank}/>
                 </div>
             )
         }

@@ -5,7 +5,7 @@ import {
     REQUEST_SORT_ORDER_OPTIONS_FAILURE,
     SORT_MOVIES
 
-} from '../actionCreators/sortActions';
+} from '../actions/sortActions';
 
 const initialState = {
     loading : false,

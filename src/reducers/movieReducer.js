@@ -2,7 +2,7 @@ import {
     REQUEST_MOVIES_START,
     REQUEST_MOVIES_SUCCESS,
     REQUEST_MOVIES_FAILURE,
-} from '../actionCreators/movieActions';
+} from '../actions/movieActions';
 
 
 
