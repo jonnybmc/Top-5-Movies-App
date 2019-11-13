@@ -14,3 +14,8 @@ Then run the following to load the project at localhost:3000
 npm start
 ```
 
+ ### Libraries used
+ - Redux
+ - Redux-Thunk
+ - Axios
+
