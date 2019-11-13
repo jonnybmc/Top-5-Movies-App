@@ -12,7 +12,7 @@ export function requestMovies() {
   return async dispatch => {
     dispatch(requestMoviesStart());
     try {
-      const response = await axios.get("http://localhost:5000/db.json");
+      const response = await axios.get("db.json");
       dispatch(requestMoviesSuccess(response.data));
 
     }

@@ -16,7 +16,7 @@ export function requestSortOrderOptions() {
     return async dispatch => {
       dispatch(requestSortOrderOptionsStart())
       try {
-        const response = await axios.get('http://localhost:5000/db.json');
+        const response = await axios.get('db.json');
         dispatch(requestSortOrderOptionsSuccess(response.data));
       }
       catch(error){
